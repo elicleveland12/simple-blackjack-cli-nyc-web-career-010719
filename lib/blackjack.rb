@@ -4,7 +4,7 @@ end
 
 def deal_card
 
-  number = rand(1..11)
+  rand(1..11)
 end
 
 def display_card_total(card_total)
@@ -30,19 +30,27 @@ end
 def initial_round
   deal_card
   deal_card
-  first_card = number
-  second_card = number
-  card_total = first_card + second_card
+  card_total = deal_card + deal_card
   
   display_card_total(card_total)
 end
 
-def hit?
+def hit?(display_card_total)
   # code hit? here
+  prompt_user
+  if gets = 's'
+    display_card_total
+  elsif gets = 'h'
+    deal_card
+    display_card_total = display_card_total + deal_card
+  else
+    invalid_command
+  end 
 end
 
 def invalid_command
   # code invalid_command here
+  puts "Please enter a valid command"
 end
 
 #####################################################
