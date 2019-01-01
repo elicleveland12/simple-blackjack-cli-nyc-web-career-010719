@@ -63,6 +63,11 @@ def runner
   prompt_user
   get_user_input
   hit?
-  
+    if card_total < 21
+      hit?
+    else 
+      end_game
+    end
+  end 
 end
     
