@@ -3,8 +3,7 @@ def welcome
 end
 
 def deal_card
-
-  rand(1..11)
+  card = rand(1..11)
 end
 
 def display_card_total(card_total)
@@ -28,8 +27,8 @@ def end_game(card_total)
 end
 
 def initial_round
-  deal_card
-  deal_card
+  first_card = deal_card
+  second_card = deal_card
   card_total = deal_card + deal_card
   
   display_card_total(card_total)
